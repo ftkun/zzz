@@ -1,0 +1,1633 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+
+<Frame name="ZZZGbidManagerFrame" enableMouse="true" movable="true">
+ <Scripts>
+  <OnLoad>
+ <!--tinsert(UISpecialFrames, self:GetName()); ZZZGbidManagerFrame:Hide()-->
+  self:RegisterForDrag("LeftButton"); tinsert(UISpecialFrames, self:GetName());
+  </OnLoad>
+  <OnDragStart>self:StartMoving();</OnDragStart>
+  <OnDragStop>self:StopMovingOrSizing();</OnDragStop>
+ </Scripts>
+ 
+ <!-- Tags below add a visual element to the frame. -->
+ 
+<Layers>
+<!--FRAME COLOUR-->
+	<Layer level="ARTWORK">
+		<Texture setAllPoints="true">
+		<Color r="0.0" g="0.0" b="0.0" a="0.9" />
+		</Texture>
+   </Layer>
+<!--HeaderTotalBank-->
+   <Layer level="OVERLAY">
+	<FontString name="HeaderTotalBank" inherits="GameFontNormal" text="0000">
+		<Anchors>
+			<Anchor point="TOPLEFT">
+				<Offset x="5" y="-5"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+<!--<Layer level="overlay">
+<Texture name="MyTexture" file="BlizzardInterfaceArt\Interface\ICONS\Ability_Ambush">
+ <Size>
+    <AbsDimension x="15" y="15"/>
+  </Size>
+  <Anchors>
+    <Anchor point="CENTER">
+      <Offset>
+        <AbsDimension x="0" y="0"/>
+      </Offset>
+    </Anchor>
+  </Anchors>
+</Texture>
+</Layer>-->	
+<!--BOSS1s Text-->  
+   <Layer level="OVERLAY">
+	<FontString name="BOSS1s" inherits="GameFontNormal" text="BOSS1s">
+		<Anchors>
+			<Anchor point="TOPLEFT">
+				<Offset x="5" y="-25"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+	<Layer level="OVERLAY">
+	<FontString name="BOSS1sSUM" inherits="GameFontNormal" text="9999">
+		<Anchors>
+			<Anchor point="TOPRIGHT">
+				<Offset x="-5" y="-25"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+<!--BOSS2s Text--> 	
+	<Layer level="OVERLAY">
+	<FontString name="BOSS2s" inherits="GameFontNormal" text="BOSS2s">
+		<Anchors>
+			<Anchor relativeTo="BOSS1s" point="TOPLEFT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+	<Layer level="OVERLAY">
+	<FontString name="BOSS2sSUM" inherits="GameFontNormal" text="9999">
+		<Anchors>
+			<Anchor relativeTo="BOSS1sSUM" point="TOPRIGHT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+<!--BOSS3s Text--> 	
+	<Layer level="OVERLAY">
+	<FontString name="BOSS3s" inherits="GameFontNormal" text="BOSS3s">
+		<Anchors>
+			<Anchor relativeTo="BOSS2s" point="TOPLEFT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+	<Layer level="OVERLAY">
+	<FontString name="BOSS3sSUM" inherits="GameFontNormal" text="9999">
+		<Anchors>
+			<Anchor relativeTo="BOSS2sSUM" point="TOPRIGHT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>	
+<!--BOSS4s Text--> 	
+	<Layer level="OVERLAY">
+	<FontString name="BOSS4s" inherits="GameFontNormal" text="BOSS4s">
+		<Anchors>
+			<Anchor relativeTo="BOSS3s" point="TOPLEFT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+	<Layer level="OVERLAY">
+	<FontString name="BOSS4sSUM" inherits="GameFontNormal" text="9999">
+		<Anchors>
+			<Anchor relativeTo="BOSS3sSUM" point="TOPRIGHT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+<!--BOSS5s Text--> 	
+	<Layer level="OVERLAY">
+	<FontString name="BOSS5s" inherits="GameFontNormal" text="BOSS5s">
+		<Anchors>
+			<Anchor relativeTo="BOSS4s" point="TOPLEFT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+	<Layer level="OVERLAY">
+	<FontString name="BOSS5sSUM" inherits="GameFontNormal" text="9999">
+		<Anchors>
+			<Anchor relativeTo="BOSS4sSUM" point="TOPRIGHT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+<!--BOSS6s Text--> 	
+	<Layer level="OVERLAY">
+	<FontString name="BOSS6s" inherits="GameFontNormal" text="BOSS6s">
+		<Anchors>
+			<Anchor relativeTo="BOSS5s" point="TOPLEFT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+	<Layer level="OVERLAY">
+	<FontString name="BOSS6sSUM" inherits="GameFontNormal" text="9999">
+		<Anchors>
+			<Anchor relativeTo="BOSS5sSUM" point="TOPRIGHT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+<!--BOSS7s Text--> 	
+	<Layer level="OVERLAY">
+	<FontString name="BOSS7s" inherits="GameFontNormal" text="BOSS7s">
+		<Anchors>
+			<Anchor relativeTo="BOSS6s" point="TOPLEFT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+	<Layer level="OVERLAY">
+	<FontString name="BOSS7sSUM" inherits="GameFontNormal" text="9999">
+		<Anchors>
+			<Anchor relativeTo="BOSS6sSUM" point="TOPRIGHT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+<!--BOSS8s Text--> 	
+	<Layer level="OVERLAY">
+	<FontString name="BOSS8s" inherits="GameFontNormal" text="BOSS8s">
+		<Anchors>
+			<Anchor relativeTo="BOSS7s" point="TOPLEFT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+	<Layer level="OVERLAY">
+	<FontString name="BOSS8sSUM" inherits="GameFontNormal" text="9999">
+		<Anchors>
+			<Anchor relativeTo="BOSS7sSUM" point="TOPRIGHT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+<!--BOSS9s Text--> 	
+	<Layer level="OVERLAY">
+	<FontString name="BOSS9s" inherits="GameFontNormal" text="BOSS9s">
+		<Anchors>
+			<Anchor relativeTo="BOSS8s" point="TOPLEFT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+	<Layer level="OVERLAY">
+	<FontString name="BOSS9sSUM" inherits="GameFontNormal" text="9999">
+		<Anchors>
+			<Anchor relativeTo="BOSS8sSUM" point="TOPRIGHT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+<!--BOSS10s Text--> 	
+	<Layer level="OVERLAY">
+	<FontString name="BOSS10s" inherits="GameFontNormal" text="BOSS10s">
+		<Anchors>
+			<Anchor relativeTo="BOSS9s" point="TOPLEFT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+	<Layer level="OVERLAY">
+	<FontString name="BOSS10sSUM" inherits="GameFontNormal" text="9999">
+		<Anchors>
+			<Anchor relativeTo="BOSS9sSUM" point="TOPRIGHT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+<!--BOSS11s Text--> 	
+	<Layer level="OVERLAY">
+	<FontString name="BOSS11s" inherits="GameFontNormal" text="BOSS11s">
+		<Anchors>
+			<Anchor relativeTo="BOSS10s" point="TOPLEFT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+	<Layer level="OVERLAY">
+	<FontString name="BOSS11sSUM" inherits="GameFontNormal" text="9999">
+		<Anchors>
+			<Anchor relativeTo="BOSS10sSUM" point="TOPRIGHT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>	
+<!--RAIDMEMBERS-->
+	<Layer level="OVERLAY">
+	<FontString name="RAIDMEMBERS" inherits="GameFontNormal" text="RAIDM">
+		<Anchors>
+			<Anchor relativeTo="ZZZGbidManagerFrame" point="BOTTOMLEFT">
+				<Offset x="5" y="10"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>
+<!--FINE Text--> 	
+	<Layer level="OVERLAY">
+	<FontString name="FINE" inherits="GameFontNormal" text="FINE">
+		<Anchors>
+			<Anchor relativeTo="BOSS11s" point="TOPLEFT">
+				<Offset x="0" y="-20"/>
+			</Anchor>
+		</Anchors>
+	</FontString>
+	</Layer>	
+	
+</Layers>
+<!--frame size-->
+	<Size x="290" y="350" />
+ <Anchors><Anchor point="CENTER" relativeTo="UIParent"/></Anchors>
+ 
+<!--BUTTONS-->
+<Frames>
+<!--BUTTONS-->
+<!--ChangeRaid-->
+<!--ChangeRaid_ZG-->
+<CheckButton name="ChangeraidZGz" inherits="UICheckButtonTemplate" enableMouse="true" text="AAA">
+		<Size>
+			<AbsDimension x="20" y="20" />
+		</Size>
+		<Anchors>
+			<Anchor point="TOP" relativeTo="$parent">
+					<Offset>
+						<AbsDimension x="-90" y="0" />
+					</Offset>
+			</Anchor>
+		</Anchors>
+<Scripts>
+		<OnClick>ChangeraidZG();</OnClick>
+</Scripts>
+		<HighlightColor r="0.72" g="0.53" b="0.04" />
+</CheckButton>
+
+<!--ChangeRaid_AQ20-->
+<CheckButton name="ChangeraidAQ20z" inherits="UICheckButtonTemplate" enableMouse="true" text="AAA">
+		<Size>
+			<AbsDimension x="20" y="20" />
+		</Size>
+		<Anchors>
+			<Anchor point="TOP" relativeTo="$parent">
+					<Offset>
+						<AbsDimension x="-70" y="0" />
+					</Offset>
+			</Anchor>
+		</Anchors>
+<Scripts>
+		<OnClick>ChangeraidAQ20();</OnClick>
+</Scripts>
+		<HighlightColor r="0.72" g="0.53" b="0.04" />
+</CheckButton>
+
+<!--ChangeRaid_MC-->
+<CheckButton name="ChangeraidMCz" inherits="UICheckButtonTemplate" enableMouse="true" text="AAA">
+		<Size>
+			<AbsDimension x="20" y="20" />
+		</Size>
+		<Anchors>
+			<Anchor point="TOP" relativeTo="$parent">
+					<Offset>
+						<AbsDimension x="-50" y="0" />
+					</Offset>
+			</Anchor>
+		</Anchors>
+<Scripts>
+		<OnClick>ChangeraidMC(); ChangeraidZGz:SetChecked(false);
+		</OnClick>
+</Scripts>
+		<HighlightColor r="0.72" g="0.53" b="0.04" />
+</CheckButton>
+<!--ChangeRaid_BWL-->
+<CheckButton name="ChangeraidBWLz" inherits="UICheckButtonTemplate" enableMouse="true" text="AAA">
+		<Size>
+			<AbsDimension x="20" y="20" />
+		</Size>
+		<Anchors>
+			<Anchor point="TOP" relativeTo="$parent">
+					<Offset>
+						<AbsDimension x="-30" y="0" />
+					</Offset>
+			</Anchor>
+		</Anchors>
+<Scripts>
+		<OnClick>ChangeraidBWL();</OnClick>
+</Scripts>
+		<HighlightColor r="0.72" g="0.53" b="0.04" />
+</CheckButton>
+ <!--closebutton-->
+<Button parentKey="CloseButton" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="TOPRIGHT" >
+						<Offset x="4" y="4"/>
+					</Anchor>
+				</Anchors>
+</Button>
+
+ <!--SendBankButton-->
+<Button name="SendBankButton" inherits="UIPanelButtonTemplate" virtual="true" text="Б">
+		<Size>
+			<AbsDimension x="50" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+				<Offset x="-5" y="5"/>
+			</Anchor>
+		</Anchors>
+		<NormalFont style="GameFontHighlight"/>
+		<HighlightFont style="GameFontHighlight"/>
+		<DisabledFont style="GameFontDisable"/>
+	<Scripts>
+		<OnClick>
+			ZZZGBMBankSendSum();
+        </OnClick>
+	</Scripts>
+</Button>
+ <!--RaidRollButton-->
+<Button name="RaidRollButton" inherits="UIPanelButtonTemplate" virtual="true" text="РР">
+		<Size>
+			<AbsDimension x="50" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor relativeTo="SendBankButton" point="BOTTOM" relativePoint="TOP">
+				<Offset x="0" y="0"/>
+			</Anchor>
+		</Anchors>
+		<NormalFont style="GameFontHighlight"/>
+		<HighlightFont style="GameFontHighlight"/>
+		<DisabledFont style="GameFontDisable"/>
+	<Scripts>
+		<OnClick>
+			ZZZGBMRaidRoll()
+        </OnClick>
+	</Scripts>
+</Button>
+ <!--DBMTimerButton-->
+<Button name="DBMTimerButton" inherits="UIPanelButtonTemplate" virtual="true" text="Т">
+		<Size>
+			<AbsDimension x="50" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor relativeTo="RaidRollButton" point="RIGHT" relativePoint="LEFT">
+				<Offset x="0" y="0"/>
+			</Anchor>
+		</Anchors>
+		<NormalFont style="GameFontHighlight"/>
+		<HighlightFont style="GameFontHighlight"/>
+		<DisabledFont style="GameFontDisable"/>
+	<Scripts>
+		<OnClick>
+			ZZZGBMDBMTimerButton()
+        </OnClick>
+	</Scripts>
+</Button>
+ <!--BankSendByBoss-->
+<Button name="BankSendByBoss" inherits="UIPanelButtonTemplate" virtual="true" text="ББ">
+		<Size>
+			<AbsDimension x="50" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor relativeTo="SendBankButton" point="RIGHT" relativePoint="LEFT">
+				<Offset x="0" y="0"/>
+			</Anchor>
+		</Anchors>
+		<NormalFont style="GameFontHighlight"/>
+		<HighlightFont style="GameFontHighlight"/>
+		<DisabledFont style="GameFontDisable"/>
+	<Scripts>
+		<OnClick>
+			ZZZGBMBankSendByBoss()
+        </OnClick>
+	</Scripts>
+</Button>
+ <!--LootHF-->
+<Button name="LootHF" inherits="UIPanelButtonTemplate" virtual="true" text="Л">
+		<Size>
+			<AbsDimension x="50" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor relativeTo="BankSendByBoss" point="RIGHT" relativePoint="LEFT">
+				<Offset x="0" y="0"/>
+			</Anchor>
+		</Anchors>
+		<NormalFont style="GameFontHighlight"/>
+		<HighlightFont style="GameFontHighlight"/>
+		<DisabledFont style="GameFontDisable"/>
+	<Scripts>
+		<OnClick>
+			ZZZGBMDBMLootHF()
+        </OnClick>
+	</Scripts>
+</Button>
+ <!--TradeGold-->
+<Button name="TradeGold" inherits="UIPanelButtonTemplate" virtual="true" text="Г" >	
+		<Size>
+			<AbsDimension x="60" y="50"/>
+		</Size>
+		<Anchors>
+			<Anchor relativeTo="ZZZGbidManagerFrame" point="BOTTOMLEFT" relativePoint="BOTTOMLEFT">
+				<Offset x="0" y="30"/>
+			</Anchor>
+		</Anchors>
+		<NormalFont style="GameFontHighlight"/>
+		<HighlightFont style="GameFontHighlight"/>
+		<DisabledFont style="GameFontDisable"/>
+	<Scripts>
+		<OnClick>
+			ZZZGBMTradeGold()
+        </OnClick>
+	</Scripts>
+</Button>
+ <!--Fine-->
+<Button name="Fine" inherits="UIPanelButtonTemplate" virtual="true" text="Ш" >	
+		<Size>
+			<AbsDimension x="50" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor relativeTo="LootHF" point="BOTTOM" relativePoint="TOP">
+				<Offset x="0" y="0"/>
+			</Anchor>
+		</Anchors>
+		<NormalFont style="GameFontHighlight"/>
+		<HighlightFont style="GameFontHighlight"/>
+		<DisabledFont style="GameFontDisable"/>
+	<Scripts>
+		<OnClick>
+			ZZZGBMFineSend()
+        </OnClick>
+	</Scripts>
+</Button>
+ <!--RULESANNOUNCE-->
+<Button name="RULESANNOUNCE" inherits="UIPanelButtonTemplate" virtual="true" text="ПЛ">
+		<Size>
+			<AbsDimension x="50" y="30"/>
+		</Size>
+		<Anchors>
+			<Anchor relativeTo="Fine" point="RIGHT" relativePoint="LEFT">
+				<Offset x="0" y="0"/>
+			</Anchor>
+		</Anchors>
+		<NormalFont style="GameFontHighlight"/>
+		<HighlightFont style="GameFontHighlight"/>
+		<DisabledFont style="GameFontDisable"/>
+	<Scripts>
+		<OnClick>
+			ZZZRULESANNOUNCE()
+        </OnClick>
+	</Scripts>
+</Button>
+ <!--inputboxes-->
+ <!--BOSS1s-->
+<EditBox name="InputBoxBOSS1s1" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true" >
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="BOSS1s" point="LEFT" relativePoint="LEFT">
+		<Offset x="80" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+	self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+		self:ClearFocus();
+		</OnEscapePressed>
+			<OnEnterPressed>
+			self:ClearFocus();
+			</OnEnterPressed>
+				<OnTextChanged>
+				InputBoxBOSS1s_Update(); HeaderTotalBank_Update();
+				</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS1s2" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS1s1" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS1s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS1s3" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS1s2" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS1s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS1s4" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS1s3" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS1s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<!--BOSS2s-->
+<EditBox name="InputBoxBOSS2s1" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="BOSS2s" point="LEFT" relativePoint="LEFT">
+		<Offset x="80" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS2s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS2s2" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS2s1" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS2s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS2s3" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS2s2" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS2s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS2s4" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS2s3" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS2s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<!--BOSS3s-->
+<EditBox name="InputBoxBOSS3s1" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="BOSS3s" point="LEFT" relativePoint="LEFT">
+		<Offset x="80" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS3s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS3s2" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS3s1" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS3s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS3s3" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS3s2" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS3s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS3s4" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS3s3" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS3s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<!--BOSS4s-->
+<EditBox name="InputBoxBOSS4s1" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="BOSS4s" point="LEFT" relativePoint="LEFT">
+		<Offset x="80" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS4s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS4s2" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS4s1" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS4s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS4s3" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS4s2" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS4s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS4s4" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS4s3" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS4s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<!--BOSS5s-->
+<EditBox name="InputBoxBOSS5s1" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="BOSS5s" point="LEFT" relativePoint="LEFT">
+		<Offset x="80" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS5s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS5s2" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS5s1" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS5s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS5s3" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS5s2" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS5s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS5s4" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS5s3" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS5s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+
+<!--BOSS6s-->
+<EditBox name="InputBoxBOSS6s1" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="BOSS6s" point="LEFT" relativePoint="LEFT">
+		<Offset x="80" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS6s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS6s2" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS6s1" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS6s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS6s3" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS6s2" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS6s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS6s4" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS6s3" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS6s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+
+<!--BOSS7s-->
+<EditBox name="InputBoxBOSS7s1" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="BOSS7s" point="LEFT" relativePoint="LEFT">
+		<Offset x="80" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS7s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS7s2" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS7s1" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS7s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS7s3" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS7s2" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS7s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS7s4" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS7s3" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS7s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+
+<!--BOSS8s-->
+<EditBox name="InputBoxBOSS8s1" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="BOSS8s" point="LEFT" relativePoint="LEFT">
+		<Offset x="80" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS8s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS8s2" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS8s1" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS8s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS8s3" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS8s2" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS8s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS8s4" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS8s3" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS8s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+
+<!--BOSS9s-->
+<EditBox name="InputBoxBOSS9s1" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="BOSS9s" point="LEFT" relativePoint="LEFT">
+		<Offset x="80" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS9s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS9s2" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS9s1" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS9s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS9s3" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS9s2" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS9s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS9s4" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS9s3" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS9s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+
+<!--BOSS10s-->
+<EditBox name="InputBoxBOSS10s1" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="BOSS10s" point="LEFT" relativePoint="LEFT">
+		<Offset x="80" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS10s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS10s2" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS10s1" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS10s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS10s3" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS10s2" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS10s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS10s4" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS10s3" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS10s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+
+<!--BOSS11s-->
+<EditBox name="InputBoxBOSS11s1" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="BOSS11s" point="LEFT" relativePoint="LEFT">
+		<Offset x="80" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS11s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>		
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS11s2" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS11s1" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS11s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS11s3" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS11s2" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS11s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxBOSS11s4" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" numeric="true">
+	<Size x="35" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxBOSS11s3" point="CENTER" relativePoint="CENTER">
+		<Offset x="45" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxBOSS11s_Update(); HeaderTotalBank_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+
+<!--FINE-->
+<EditBox name="InputBoxFINE1" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" >
+	<Size x="80" y="20"/>
+<Anchors>
+	<Anchor relativeTo="FINE" point="LEFT" relativePoint="LEFT">
+		<Offset x="80" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxFINE_Update()
+			</OnTextChanged>		
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxFINE2" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false">
+	<Size x="80" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxFINE1" point="CENTER" relativePoint="BOTTOM">
+		<Offset x="0" y="-10"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxFINE_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxFINE3" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" >
+	<Size x="80" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxFINE2" point="CENTER" relativePoint="CENTER">
+		<Offset x="90" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxFINE_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+<EditBox name="InputBoxFINE4" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="4" >
+	<Size x="80" y="20"/>
+<Anchors>
+	<Anchor relativeTo="InputBoxFINE1" point="CENTER" relativePoint="CENTER">
+		<Offset x="90" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxFINE_Update()
+			</OnTextChanged>
+	</Scripts>
+</EditBox>
+
+
+<EditBox name="InputBoxRAIDMEMBERS" parent="ZZZGbidManagerFrame" inherits= "InputBoxTemplate" autoFocus="false" letters="2" numeric="true">
+	<Size x="25" y="20"/>
+<Anchors>
+	<Anchor relativeTo="RAIDMEMBERS" point="LEFT" relativePoint="LEFT">
+		<Offset x="53" y="0"/>
+	</Anchor> 
+</Anchors>
+	<Scripts>
+	<OnLoad>
+		self:Insert("0");
+	</OnLoad>
+		<OnEscapePressed>
+			self:ClearFocus()
+		</OnEscapePressed>
+		<OnEnterPressed>
+                        self:ClearFocus()
+        </OnEnterPressed>
+			<OnTextChanged>
+				InputBoxRAIDMEMBERS_Update()
+			</OnTextChanged>		
+	</Scripts>
+</EditBox>
+
+
+<!--<OnEditFocusLost>
+			FHighlightText()
+		</OnEditFocusLost>
+		<OnEditFocusGained>
+			FHighlightText()
+		</OnEditFocusGained>-->
+</Frames>
+
+
+</Frame>
+
+
+</Ui>
